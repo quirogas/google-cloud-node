@@ -124,7 +124,7 @@ describe('TestProxy/CheckAndMutateRow', () => {
               bigtable.options.BigtableClient,
             );
             bigtable.api['BigtableClient'] = bigtableClient;
-            bigtableClient.checkAndMutateRow = (
+            (bigtableClient as any).checkAndMutateRow = (
               request?: protos.google.bigtable.v2.ICheckAndMutateRowRequest,
               optionsOrCallback?:
                 | CallOptions

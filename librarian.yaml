@@ -1742,3 +1742,11 @@ libraries:
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/error-reporting-api'
+  - name: google-cloud-bigtable-api
+    version: 1.0.0
+    apis:
+      - path: google/bigtable/v2
+      - path: google/bigtable/admin/v2
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/bigtable-api'

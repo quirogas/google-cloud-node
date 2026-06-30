@@ -300,7 +300,7 @@ export class CloudMonitoringExporter extends MetricExporter {
       // We want the MetricServiceClient to always hit its default endpoint.
       delete options.apiEndpoint;
     }
-    this.client = new MetricServiceClient(options);
+    this.client = new MetricServiceClient(options as any);
   }
 
   async export(

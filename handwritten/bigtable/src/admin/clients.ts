@@ -25,9 +25,14 @@ import * as gax from 'google-gax';
  */
 export class BigtableAdmin {
   private clientOptions?: gax.ClientOptions;
+  private instanceAdminClientOptions?: gax.ClientOptions;
 
-  constructor(clientOptions?: gax.ClientOptions) {
+  constructor(
+    clientOptions?: gax.ClientOptions,
+    instanceAdminClientOptions?: gax.ClientOptions,
+  ) {
     this.clientOptions = clientOptions;
+    this.instanceAdminClientOptions = instanceAdminClientOptions;
   }
 
   /**
@@ -39,7 +44,10 @@ export class BigtableAdmin {
   static fromBigtable(bigtable: Bigtable) {
     // The Bigtable object has separate values for table and instance clients,
     // but they should functionally be the same.
-    return new BigtableAdmin(bigtable.options.BigtableTableAdminClient);
+    return new BigtableAdmin(
+      bigtable.options.BigtableTableAdminClient,
+      bigtable.options.BigtableInstanceAdminClient,
+    );
   }
 
   /**
@@ -48,7 +56,7 @@ export class BigtableAdmin {
    * @returns The admin client
    */
   getTableAdminClient(options?: gax.ClientOptions) {
-    return new TableAdminClient(options ?? this.clientOptions);
+    return new TableAdminClient((options ?? this.clientOptions) as any);
   }
 
   /**
@@ -57,6 +65,8 @@ export class BigtableAdmin {
    * @returns The admin client
    */
   getInstanceAdminClient(options?: gax.ClientOptions) {
-    return new InstanceAdminClient(options ?? this.clientOptions);
+    return new InstanceAdminClient(
+      (options ?? this.instanceAdminClientOptions ?? this.clientOptions) as any,
+    );
   }
 }

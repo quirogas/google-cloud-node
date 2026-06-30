@@ -49,6 +49,7 @@
     "precompile": "gts clean"
   },
   "dependencies": {
+    "@google-cloud/bigtable-api": "file:../../packages/google-cloud-bigtable-api",
     "@google-cloud/monitoring": "^5.0.1",
     "@google-cloud/opentelemetry-cloud-monitoring-exporter": "^0.20.0",
     "@google-cloud/opentelemetry-resource-util": "^2.4.0",
@@ -66,7 +67,7 @@
     "escape-string-regexp": "4.0.0",
     "extend": "^3.0.2",
     "fast-crc32c": "^2.0.0",
-    "google-gax": "^5.0.1-rc.0",
+    "google-gax": "^5.1.1-rc.1",
     "grpc-gcp": "^1.0.1",
     "is": "^3.3.0",
     "is-utf8": "^0.2.1",

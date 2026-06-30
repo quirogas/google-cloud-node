@@ -37,7 +37,7 @@ export class TableAdminClient extends BigtableTableAdminClient {
     opts?: ClientOptions,
     gaxInstance?: typeof gax | typeof gax.fallback,
   ) {
-    super(opts, gaxInstance);
+    super(opts as any, gaxInstance as any);
 
     const protoFilesRoot = this.pGaxModule.protobufFromJSON(jsonProtos);
 

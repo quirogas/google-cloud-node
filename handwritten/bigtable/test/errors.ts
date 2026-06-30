@@ -163,6 +163,7 @@ describe('BigtableAdminClient/Errors', () => {
     });
     bigtable = new Bigtable({
       apiEndpoint: `localhost:${port}`,
+      ssl: false,
     });
     service = new BigtableAdminClientMockService(server);
   });
