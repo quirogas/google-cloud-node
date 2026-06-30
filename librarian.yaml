@@ -353,6 +353,13 @@ libraries:
     apis:
       - path: google/cloud/bigquery/reservation/v1
     copyright_year: "2026"
+  - name: google-cloud-bigquery-storage-api
+    version: 1.0.0
+    apis:
+      - path: google/cloud/bigquery/storage/v1
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/bigquery-storage-api'
   - name: google-cloud-billing
     version: 5.1.2
     apis:

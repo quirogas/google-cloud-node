@@ -84,9 +84,9 @@ export class StreamConnection extends EventEmitter {
     const client = this._writeClient.getClient();
     const connection = client.appendRows(callOptions);
     this._connection = connection;
-    this._connection.on('data', this.handleData);
-    this._connection.on('error', this.handleError);
-    this._connection.on('close', () => {
+    this._connection!.on('data', this.handleData);
+    this._connection!.on('error', this.handleError);
+    this._connection!.on('close', () => {
       this.trace('connection closed', this._lastConnectionError);
       if (this.hasPendingWrites()) {
         const retrySettings = this._writeClient._retrySettings;
@@ -105,15 +105,15 @@ export class StreamConnection extends EventEmitter {
         }
       }
     });
-    this._connection.on('pause', () => {
+    this._connection!.on('pause', () => {
       this.trace('connection paused');
       this.emit('pause');
     });
-    this._connection.on('resume', () => {
+    this._connection!.on('resume', () => {
       this.trace('connection resumed');
       this.emit('resume');
     });
-    this._connection.on('end', () => {
+    this._connection!.on('end', () => {
       this.trace('connection ended');
       this.emit('end');
     });
