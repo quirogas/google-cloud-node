@@ -1357,6 +1357,7 @@ libraries:
     version: 1.0.0
     apis:
       - path: google/datastore/v1
+      - path: google/datastore/admin/v1
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/datastore-api'
