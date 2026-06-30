@@ -37,6 +37,7 @@
     "chalk": "^5.0.0",
     "figures": "^6.0.0",
     "gaxios": "^7.0.0-rc",
+    "google-gax": "^5.1.1-rc.1",
     "parse-link-header": "^2.0.0"
   },
   "devDependencies": {

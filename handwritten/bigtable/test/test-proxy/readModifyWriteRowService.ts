@@ -74,7 +74,7 @@ describe('TestProxy/ReadModifyWriteRow', () => {
             bigtable.options.BigtableClient,
           );
           bigtable.api['BigtableClient'] = bigtableClient;
-          bigtableClient.readModifyWriteRow = (
+          (bigtableClient as any).readModifyWriteRow = (
             request?: protos.google.bigtable.v2.IReadModifyWriteRowRequest,
             optionsOrCallback?:
               | CallOptions

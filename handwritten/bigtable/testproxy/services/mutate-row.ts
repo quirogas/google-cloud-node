@@ -37,7 +37,7 @@ export const mutateRow: ClientImplMaker<
     try {
       await client.mutateRow({
         appProfileId,
-        mutations,
+        mutations: mutations as any,
         tableName,
         rowKey,
       });

@@ -78,7 +78,7 @@ describe('Bigtable/MetricServiceClientCredentials', () => {
     // fetches the right projectId when the saved options are provided to the
     // MetricsServiceClient as this is required to save the metrics to the right
     // project.
-    const client = new MetricServiceClient(savedOptions);
+    const client = new MetricServiceClient(savedOptions as any);
     const projectIdUsed = await client.getProjectId();
     assert.strictEqual(projectIdUsed, SECOND_PROJECT_ID);
   });

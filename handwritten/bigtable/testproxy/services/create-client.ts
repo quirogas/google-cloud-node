@@ -49,7 +49,7 @@ export const createClient: ClientImplMaker<
     // TODO: Handle refresh periods
     const {request} = rawRequest;
     const clientConfig = JSON.parse(
-      JSON.stringify(require('../../src/v2/bigtable_client_config.json')),
+      JSON.stringify(require('@google-cloud/bigtable-api/build/src/v2/bigtable_client_config.json')),
     );
     const {
       callCredential,

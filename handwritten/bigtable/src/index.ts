@@ -94,6 +94,8 @@ export interface BigtableOptions extends gax.GoogleAuthOptions {
    */
   apiEndpoint?: string;
 
+  ssl?: boolean;
+
   appProfileId?: string;
 
   /**
@@ -514,10 +516,12 @@ export class Bigtable {
     let customEndpointPort: number | undefined;
     let sslCreds: gaxVendoredGrpc.ChannelCredentials | undefined;
 
-    if (customEndpoint) {
-      const customEndpointParts = customEndpoint.split(':');
-      customEndpointBaseUrl = customEndpointParts[0];
-      customEndpointPort = Number(customEndpointParts[1]);
+    if (customEndpoint || options.ssl === false) {
+      if (customEndpoint) {
+        const customEndpointParts = customEndpoint.split(':');
+        customEndpointBaseUrl = customEndpointParts[0];
+        customEndpointPort = Number(customEndpointParts[1]);
+      }
       sslCreds = grpc.credentials.createInsecure();
     }
 
@@ -551,6 +555,7 @@ export class Bigtable {
         }),
       },
       options,
+      sslCreds ? {sslCreds} : {},
     ) as gax.ClientOptions;
 
     const adminOptions = Object.assign(
@@ -563,6 +568,7 @@ export class Bigtable {
           getDomain('bigtableadmin', options, options.BigtableTableAdminClient),
       },
       options,
+      sslCreds ? {sslCreds} : {},
     );
     const instanceAdminOptions = Object.assign(
       {},
@@ -578,6 +584,7 @@ export class Bigtable {
           ),
       },
       options,
+      sslCreds ? {sslCreds} : {},
     );
 
     this.options = {
@@ -938,7 +945,7 @@ export class Bigtable {
         if (!gaxClient) {
           // Lazily instantiate client.
           const clientOptions = this.options[config.client]!;
-          gaxClient = new v2[config.client](clientOptions);
+          gaxClient = new (v2 as any)[config.client](clientOptions);
           this.api[config.client] = gaxClient;
         }
         let reqOpts = extend(true, {}, config.reqOpts);

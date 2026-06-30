@@ -34,7 +34,7 @@ export function createBigtableClient(bigtable: Bigtable) {
       code: grpc.status.ALREADY_EXISTS,
     });
   }
-  bigtableAny[v2] = new BigtableClient(bigtable.options.BigtableClient);
+  bigtableAny[v2] = new BigtableClient(bigtable.options.BigtableClient as any);
 }
 
 export function getBigtableClient(bigtable: Bigtable): BigtableClient {
