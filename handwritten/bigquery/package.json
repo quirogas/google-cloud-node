@@ -50,6 +50,7 @@
     "precompile": "gts clean"
   },
   "dependencies": {
+    "@google-cloud/bigquery-api": "file:../../packages/google-cloud-bigquery-api",
     "@google-cloud/common": "^6.0.0",
     "@google-cloud/paginator": "^6.0.0",
     "@google-cloud/precise-date": "^5.0.0",
