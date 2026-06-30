@@ -1735,3 +1735,10 @@ libraries:
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/firestore-api'
+  - name: google-cloud-error-reporting-api
+    version: 1.0.0
+    apis:
+      - path: google/devtools/clouderrorreporting/v1beta1
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/error-reporting-api'

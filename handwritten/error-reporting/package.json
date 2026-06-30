@@ -33,6 +33,7 @@
     "precompile": "gts clean"
   },
   "dependencies": {
+    "@google-cloud/error-reporting-api": "file:../../packages/google-cloud-error-reporting-api",
     "@google-cloud/common": "^6.0.0",
     "console-log-level": "^1.4.1"
   },
