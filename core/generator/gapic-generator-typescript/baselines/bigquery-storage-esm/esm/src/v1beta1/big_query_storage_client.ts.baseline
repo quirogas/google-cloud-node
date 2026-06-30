@@ -1115,7 +1115,7 @@ export class BigQueryStorageClient {
       throw err;
     });
     this._log.info('readRows stream %j', options);
-    return this.innerApiCalls.readRows(request, options);
+    return this.innerApiCalls.readRows(request || {}, options);
   }
 
   // --------------------

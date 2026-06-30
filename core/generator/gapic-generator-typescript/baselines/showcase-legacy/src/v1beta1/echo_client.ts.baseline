@@ -1051,7 +1051,7 @@ export class EchoClient {
       throw err;
     });
     this._log.info('expand stream %j', options);
-    return this.innerApiCalls.expand(request, options);
+    return this.innerApiCalls.expand(request || {}, options);
   }
 
   /**

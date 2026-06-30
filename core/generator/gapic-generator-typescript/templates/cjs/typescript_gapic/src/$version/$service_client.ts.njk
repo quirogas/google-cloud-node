@@ -776,7 +776,7 @@ export class {{ service.name }}Client {
     this.warn('DEP${{service.name}}-${{method.name}}','{{method.name}} is deprecated and may be removed in a future version.', 'DeprecationWarning');
     {%- endif %}
     this._log.info('{{ method.name.toCamelCase() }} stream %j', options);
-    return this.innerApiCalls.{{ method.name.toCamelCase(true) }}(request, options);
+    return this.innerApiCalls.{{ method.name.toCamelCase(true) }}(request || {}, options);
   }
 {%- elif method.clientStreaming %}
 /**

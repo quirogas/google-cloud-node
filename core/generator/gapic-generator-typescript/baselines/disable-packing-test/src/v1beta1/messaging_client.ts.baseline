@@ -1531,7 +1531,7 @@ export class MessagingClient {
       throw err;
     });
     this._log.info('streamBlurbs stream %j', options);
-    return this.innerApiCalls.streamBlurbs(request, options);
+    return this.innerApiCalls.streamBlurbs(request || {}, options);
   }
 
   /**

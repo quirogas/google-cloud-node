@@ -537,7 +537,7 @@ export class ConversationalSearchServiceClient {
       throw err;
     });
     this._log.info('conversationalSearch stream %j', options);
-    return this.innerApiCalls.conversationalSearch(request, options);
+    return this.innerApiCalls.conversationalSearch(request || {}, options);
   }
 
   // --------------------
