@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
   "protoPackage": "google.spanner.executor.v1",
-  "libraryPackage": "@google-cloud/executor",
+  "libraryPackage": "@google-cloud/spanner-api",
   "services": {
     "SpannerExecutorProxy": {
       "clients": {

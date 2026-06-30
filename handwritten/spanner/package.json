@@ -53,6 +53,7 @@
     "coverage": "c8 mocha build/test build/test/common && c8 report --check-coverage"
   },
   "dependencies": {
+    "@google-cloud/spanner-api": "file:../../packages/google-cloud-spanner-api",
     "@babel/core": "7.27.7",
     "@babel/helpers": "7.27.6",
     "@babel/traverse": "7.27.7",
