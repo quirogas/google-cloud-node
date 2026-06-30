@@ -1436,6 +1436,13 @@ libraries:
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/access-context-manager'
+  - name: google-cloud-logging-api
+    version: 1.0.0
+    apis:
+      - path: google/logging/v2
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/logging-api'
   - name: google-maps-addressvalidation
     version: 3.2.2
     apis:

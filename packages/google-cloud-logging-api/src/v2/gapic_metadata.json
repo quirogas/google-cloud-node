@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
   "protoPackage": "google.logging.v2",
-  "libraryPackage": "@google-cloud/logging",
+  "libraryPackage": "@google-cloud/logging-api",
   "services": {
     "ConfigServiceV2": {
       "clients": {
