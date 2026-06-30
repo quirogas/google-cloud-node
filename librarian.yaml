@@ -1726,3 +1726,12 @@ libraries:
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/spanner-api'
+  - name: google-cloud-firestore-api
+    version: 1.0.0
+    apis:
+      - path: google/firestore/v1
+      - path: google/firestore/v1beta1
+      - path: google/firestore/admin/v1
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/firestore-api'

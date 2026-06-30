@@ -2,8 +2,8 @@
   "schema": "1.0",
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
-  "protoPackage": "google.firestore.v1",
-  "libraryPackage": "@google-cloud/firestore",
+  "protoPackage": "google.firestore.v1beta1",
+  "libraryPackage": "@google-cloud/firestore-api",
   "services": {
     "Firestore": {
       "clients": {
@@ -58,16 +58,6 @@
             "RunQuery": {
               "methods": [
                 "runQuery"
-              ]
-            },
-            "ExecutePipeline": {
-              "methods": [
-                "executePipeline"
-              ]
-            },
-            "RunAggregationQuery": {
-              "methods": [
-                "runAggregationQuery"
               ]
             },
             "Write": {

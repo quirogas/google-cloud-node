@@ -75,7 +75,7 @@ import {
 } from './validate';
 import {WriteBatch} from './write-batch';
 
-import {interfaces} from './v1/firestore_client_config.json';
+import {interfaces} from '@google-cloud/firestore-api/build/src/v1/firestore_client_config.json';
 const serviceConfig = interfaces['google.firestore.v1.Firestore'];
 
 import api = google.firestore.v1;
