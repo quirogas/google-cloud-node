@@ -151,7 +151,7 @@ export class Schema {
         name,
         view,
       },
-      gaxOpts,
+      gaxOpts as any,
     );
 
     return schema;
@@ -173,7 +173,7 @@ export class Schema {
       {
         name,
       },
-      gaxOpts,
+      gaxOpts as any,
     );
   }
 
@@ -212,7 +212,7 @@ export class Schema {
         message,
         encoding,
       },
-      gaxOpts,
+      gaxOpts as any,
     );
   }
 

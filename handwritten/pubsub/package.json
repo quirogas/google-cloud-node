@@ -50,6 +50,7 @@
     "precompile": "gts clean"
   },
   "dependencies": {
+    "@google-cloud/pubsub-api": "file:../../packages/google-cloud-pubsub-api",
     "@google-cloud/paginator": "^6.0.0",
     "@google-cloud/precise-date": "^5.0.0",
     "@google-cloud/projectify": "^5.0.0",

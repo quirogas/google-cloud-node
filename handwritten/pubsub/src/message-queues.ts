@@ -576,7 +576,7 @@ export class AckQueue extends MessageQueue {
     const reqOpts = {subscription: this._subscriber.name, ackIds};
 
     try {
-      await client.acknowledge(reqOpts, this.getCallOptions());
+      await client.acknowledge(reqOpts, this.getCallOptions() as any);
 
       // It's okay if these pass through since they're successful anyway.
       this.handleAckSuccesses(batch);
@@ -667,7 +667,7 @@ export class ModAckQueue extends MessageQueue {
       );
 
       try {
-        await client.modifyAckDeadline(reqOpts, callOptions);
+        await client.modifyAckDeadline(reqOpts, callOptions as any);
 
         responseSpan?.end();
 

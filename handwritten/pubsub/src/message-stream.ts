@@ -45,7 +45,7 @@ const KEEP_ALIVE_INTERVAL = 30000;
 /*!
  * Deadline for the stream.
  */
-const PULL_TIMEOUT = require('./v1/subscriber_client_config.json').interfaces[
+const PULL_TIMEOUT = require('@google-cloud/pubsub-api/build/src/v1/subscriber_client_config.json').interfaces[
   'google.pubsub.v1.Subscriber'
 ].methods.StreamingPull.timeout_millis;
 

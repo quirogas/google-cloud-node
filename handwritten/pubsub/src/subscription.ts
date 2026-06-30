@@ -1224,7 +1224,7 @@ export class Subscription extends EventEmitter {
  * All async methods (except for streams) will return a Promise in the event
  * that a callback is omitted.
  */
-promisifySome(Subscription, Subscription.prototype, [
+promisifySome(Subscription as unknown as Function, Subscription.prototype, [
   'close',
   'create',
   'createSnapshot',

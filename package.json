@@ -2,6 +2,10 @@
   "name": "google-cloud-node",
   "private": true,
   "description": "Google Cloud client libraries for Node.js",
+  "workspaces": [
+    "packages/*",
+    "handwritten/*"
+  ],
   "bin": "bin/generate-readme.mjs",
   "directories": {
     "doc": "docs"

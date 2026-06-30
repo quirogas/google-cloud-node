@@ -448,7 +448,7 @@ export class PubSub {
     };
 
     const client = await this.getSchemaClient();
-    await client.createSchema(request, gaxOpts);
+    await client.createSchema(request as any, gaxOpts as any);
     return new Schema(this, schemaName);
   }
 
@@ -884,7 +884,7 @@ export class PubSub {
       view,
     };
 
-    for await (const s of client.listSchemasAsync(query, options)) {
+    for await (const s of client.listSchemasAsync(query, options as any)) {
       yield s;
     }
   }
@@ -1495,7 +1495,7 @@ export class PubSub {
         parent: this.name,
         schema,
       },
-      gaxOpts,
+      gaxOpts as any,
     );
   }
 
