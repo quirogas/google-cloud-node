@@ -60,13 +60,14 @@
     "lint": "gts check",
     "clean": "gts clean",
     "compile": "tsc -p .",
-    "postcompile": "node scripts/init-directories.js && cp -r dev/protos build && cp dev/src/v1beta1/*.json build/src/v1beta1/ && cp dev/src/v1/*.json build/src/v1/ && cp dev/conformance/test-definition.proto build/conformance && cp dev/conformance/conformance-tests/*.json build/conformance/conformance-tests && minifyProtoJson",
+    "postcompile": "node scripts/init-directories.js && cp -r dev/protos build && cp dev/conformance/test-definition.proto build/conformance && cp dev/conformance/conformance-tests/*.json build/conformance/conformance-tests && minifyProtoJson",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "prelint": "cd samples; npm link ../; npm install",
     "precompile": "gts clean"
   },
   "dependencies": {
+    "@google-cloud/firestore-api": "file:../../packages/google-cloud-firestore-api",
     "@opentelemetry/api": "^1.9.0",
     "fast-deep-equal": "^3.1.3",
     "functional-red-black-tree": "^1.0.1",
