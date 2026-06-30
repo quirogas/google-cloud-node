@@ -229,3 +229,6 @@ export class ErrorReporting {
     this.koa2 = koa2Interface.koa2ErrorHandler(this._client, this._config);
   }
 }
+
+import * as v1beta1 from '@google-cloud/error-reporting-api';
+export {v1beta1};
