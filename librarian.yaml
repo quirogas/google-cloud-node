@@ -1353,6 +1353,14 @@ libraries:
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/dataflow'
+  - name: google-cloud-datastore-api
+    version: 1.0.0
+    apis:
+      - path: google/datastore/v1
+      - path: google/datastore/admin/v1
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/datastore-api'
   - name: google-devicesandservices-health
     version: 0.3.0
     apis:

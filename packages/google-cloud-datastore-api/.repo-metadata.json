@@ -1,0 +1,15 @@
+{
+    "api_description": "Accesses the schemaless NoSQL database to provide fully managed, robust,\nscalable storage for your application.",
+    "api_id": "datastore.googleapis.com",
+    "api_shortname": "datastore",
+    "default_version": "v1",
+    "distribution_name": "@google-cloud/datastore-api",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/559768",
+    "language": "nodejs",
+    "library_type": "GAPIC_AUTO",
+    "name": "datastore",
+    "name_pretty": "Cloud Datastore",
+    "product_documentation": "https://cloud.google.com/datastore",
+    "release_level": "stable",
+    "repo": "googleapis/google-cloud-node"
+}
