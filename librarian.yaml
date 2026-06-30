@@ -2052,3 +2052,13 @@ libraries:
     nodejs:
       default_version: v1
       package_name: '@google-cloud/grafeas'
+  - name: google-cloud-spanner-api
+    version: 1.0.0
+    apis:
+      - path: google/spanner/v1
+      - path: google/spanner/admin/database/v1
+      - path: google/spanner/admin/instance/v1
+      - path: google/spanner/executor/v1
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/spanner-api'
