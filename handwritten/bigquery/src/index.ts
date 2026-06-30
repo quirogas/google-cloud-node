@@ -139,3 +139,6 @@ export {
   TableSchema,
   ViewDefinition,
 } from './table';
+
+import * as v2 from '@google-cloud/bigquery-api';
+export {v2};

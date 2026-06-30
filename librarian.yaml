@@ -299,6 +299,13 @@ libraries:
     copyright_year: "2026"
     nodejs:
       package_name: '@google-cloud/clientgateways'
+  - name: google-cloud-bigquery-api
+    version: 1.0.0
+    apis:
+      - path: google/cloud/bigquery/v2
+    copyright_year: "2026"
+    nodejs:
+      package_name: '@google-cloud/bigquery-api'
   - name: google-cloud-bigquery-analyticshub
     version: 2.4.1
     apis:
