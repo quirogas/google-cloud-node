@@ -80,18 +80,18 @@ export class ReadStream {
         callback(null, response);
       },
     });
-    this._readStream = this._connection.pipe(passthrough);
-    this._connection.on('error', this.handleError);
-    this._connection.on('close', () => {
+    this._readStream = this._connection!.pipe(passthrough);
+    this._connection!.on('error', this.handleError);
+    this._connection!.on('close', () => {
       this.trace('connection closed');
     });
-    this._connection.on('pause', () => {
+    this._connection!.on('pause', () => {
       this.trace('connection paused');
     });
-    this._connection.on('resume', async () => {
+    this._connection!.on('resume', async () => {
       this.trace('connection resumed');
     });
-    this._connection.on('end', () => {
+    this._connection!.on('end', () => {
       this.trace('connection ended');
     });
   }
