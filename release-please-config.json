@@ -98,6 +98,9 @@
     "packages/google-cloud-domains": {},
     "packages/google-cloud-edgecontainer": {},
     "packages/google-cloud-edgenetwork": {},
+    "packages/google-cloud-error-reporting-api": {
+      "component": "google-cloud-error-reporting-api"
+    },
     "packages/google-cloud-essentialcontacts": {},
     "packages/google-cloud-eventarc": {},
     "packages/google-cloud-eventarc-publishing": {},

@@ -124,6 +124,7 @@
   "packages/google-cloud-domains": "4.2.2",
   "packages/google-cloud-edgecontainer": "0.8.2",
   "packages/google-cloud-edgenetwork": "0.11.1",
+  "packages/google-cloud-error-reporting-api": "0.1.0",
   "packages/google-cloud-essentialcontacts": "4.2.2",
   "packages/google-cloud-eventarc": "4.3.1",
   "packages/google-cloud-eventarc-publishing": "4.3.0",
