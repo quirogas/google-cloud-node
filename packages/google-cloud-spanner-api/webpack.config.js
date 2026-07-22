@@ -17,8 +17,8 @@ const path = require('path');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    library: 'SpannerApi',
-    filename: './spanner-api.js',
+    library: 'InstanceAdmin',
+    filename: './instance-admin.js',
   },
   node: {
     child_process: 'empty',

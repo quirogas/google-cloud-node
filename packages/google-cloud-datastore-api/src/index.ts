@@ -20,9 +20,8 @@ import * as v1 from './v1';
 
 const DatastoreAdminClient = v1.DatastoreAdminClient;
 type DatastoreAdminClient = v1.DatastoreAdminClient;
-const DatastoreClient = v1.DatastoreClient;
-type DatastoreClient = v1.DatastoreClient;
-export {v1, DatastoreAdminClient, DatastoreClient};
-export default {v1, DatastoreAdminClient, DatastoreClient};
+
+export {v1, DatastoreAdminClient};
+export default {v1, DatastoreAdminClient};
 import * as protos from '../protos/protos';
 export {protos};

@@ -17,8 +17,8 @@ const path = require('path');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    library: 'DatastoreApi',
-    filename: './datastore-api.js',
+    library: 'DatastoreAdmin',
+    filename: './datastore-admin.js',
   },
   node: {
     child_process: 'empty',

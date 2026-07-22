@@ -17,4 +17,3 @@
 // ** All changes to this file may be overwritten. **
 
 export { FirestoreAdminClient } from './firestore_admin_client';
-export { FirestoreClient } from './firestore_client';
