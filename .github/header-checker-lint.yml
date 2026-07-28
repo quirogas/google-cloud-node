@@ -11,8 +11,6 @@ sourceFileExtensions:
 ignoreFiles:
   - 'packages/*/webpack.config.js'
   - 'packages/*/__snapshots__/**/*.js'
-  - 'packages/*/protos/protos.js'
-  - 'handwritten/*/protos/protos.js'
   - '**/protos/protos.js'
   - 'core/packages/typeless-sample-bot/test/fixtures/**/*.ts'
   - 'core/packages/typeless-sample-bot/test/fixtures/**/*.js'
