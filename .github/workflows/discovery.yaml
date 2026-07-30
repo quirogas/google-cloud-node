@@ -1,5 +1,6 @@
 permissions:
   contents: read
+  issues: write
 
 on:
   schedule:
@@ -24,8 +25,8 @@ jobs:
       - run: cd handwritten/bigquery && pnpm install
       # Generate types
       - run: cd handwritten/bigquery && pnpm run types
-      # Fix formatting
-      - run: cd handwritten/bigquery && pnpm run fix
+      # Fix formatting (scoped to generated types.d.ts and clean up untracked pnpm-lock.yaml)
+      - run: cd handwritten/bigquery && pnpm run fix && git checkout src/bigquery.ts system-test/ 2>/dev/null || true && rm -f pnpm-lock.yaml
       # Submit pull request
       - uses: googleapis/code-suggester@f9fef85aa02459e30e62526abe950341cbbd768b # v5
         env:
@@ -35,9 +36,33 @@ jobs:
           upstream_owner: googleapis
           upstream_repo: google-cloud-node
           description: 'Automated pull-request to keep BigQuery Discovery types up-to-date.'
-          title: 'chore: update types from Discovery'
-          message: 'chore: update types from Discovery'
+          title: 'chore(bigquery): update types from Discovery'
+          message: 'chore(bigquery): update types from Discovery'
           branch: update-discovery-patch
-          git_dir: 'handwritten/bigquery'
+          git_dir: '.'
           fork: true
           force: true
+      - name: Create issue on failure
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const title = '[CI Failure] Scheduled Discovery Types Update Failed';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'priority: p1'
+            });
+            const existing = issues.find(i => i.title === title);
+            if (!existing) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: `The automated weekly BigQuery Discovery types generation workflow failed.\n\nRun link: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+                labels: ['priority: p1', 'type: bug']
+              });
+            }
+
+
