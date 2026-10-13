@@ -1,5 +1,5 @@
 name: "Check PNPM Lockfile and Install Workspace Dependencies"
-description: "Sets up pnpm and installs workspace dependencies with frozen lockfile check"
+description: "Sets up pnpm, verifies frozen lockfile sync, and links in-repo workspace packages"
 inputs:
   link-workspace-packages:
     description: "Whether to link matching in-repo workspace packages after verifying the frozen lockfile"
@@ -33,9 +33,10 @@ runs:
       if: ${{ inputs.link-workspace-packages == 'true' }}
       shell: bash
       run: |
-        pnpm install --config.link-workspace-packages=deep --config.prefer-workspace-packages=true --no-frozen-lockfile --resolution-only --ignore-scripts --prefer-offline
+        node .github/scripts/link-workspace-packages.cjs
         rm -f node_modules/.pnpm-workspace-state.json
-        pnpm install --config.link-workspace-packages=deep --config.prefer-workspace-packages=true --no-frozen-lockfile --ignore-scripts --prefer-offline
-        git checkout -- pnpm-lock.yaml
+        pnpm install --prefer-offline --ignore-scripts --no-frozen-lockfile
+        pnpm --dir core/dev-packages/pack-n-play run compile
+        pnpm --dir core/packages/nodejs-proto-files run compile
         pnpm --dir core/packages/gaxios run compile
         pnpm --dir core/packages/teeny-request run compile
