@@ -23,7 +23,7 @@ jobs:
           node-version: 22
       - run: node --version
       - uses: ./.github/actions/pnpm-lockfile-check
-      - run: pnpm exec turbo run compile --filter={./handwritten/storage}
+      - run: pnpm --filter ...{handwritten/storage} run --if-present compile
       - run: cd handwritten/storage && pnpm run conformance-test
   docs-test:
     runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
           node-version: 22
       - run: node --version
       - uses: ./.github/actions/pnpm-lockfile-check
-      - run: pnpm exec turbo run compile --filter={./handwritten/storage}
+      - run: pnpm --filter ...{handwritten/storage} run --if-present compile
       - run: cd handwritten/storage && pnpm run docs-test

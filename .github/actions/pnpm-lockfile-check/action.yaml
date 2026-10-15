@@ -33,10 +33,5 @@ runs:
       if: ${{ inputs.link-workspace-packages == 'true' }}
       shell: bash
       run: |
-        node .github/scripts/link-workspace-packages.cjs
-        rm -f node_modules/.pnpm-workspace-state.json
-        pnpm install --prefer-offline --ignore-scripts --no-frozen-lockfile
-        pnpm --dir core/dev-packages/pack-n-play run compile
-        pnpm --dir core/packages/nodejs-proto-files run compile
         pnpm --dir core/packages/gaxios run compile
         pnpm --dir core/packages/teeny-request run compile
